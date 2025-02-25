@@ -1,0 +1,34 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "This is the beginning off my creating my portfolio using the MERN stack.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "NODE_ENV=development nodemon ./backend/server.js",
+        "build": "npm install && cd frontend && npm install && npm run build",
+        "start": "NODE_ENV=production node backend/server.js"
+    },
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FarrisKamel/Portfolio.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/FarrisKamel/Portfolio/issues"
+    },
+    "homepage": "https://github.com/FarrisKamel/Portfolio#readme",
+    "dependencies": {
+        "20": "^3.1.9",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "mongoose": "^8.9.5"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    }
+}

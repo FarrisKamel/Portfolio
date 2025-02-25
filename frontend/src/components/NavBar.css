@@ -1,0 +1,84 @@
+/* === NavBar.css === */
+
+/* Navbar Styling */
+.navbar {
+    background: #F1EBE7;  /* Beige Background */
+    border-radius: 15px;
+    width: 50%;  /* Set a fixed width percentage */
+    max-width: 1300px;  /* Prevent excessive stretching */
+    margin: 20px auto; /* Center it horizontally */
+    padding: 10px 20px;
+    box-shadow: none;  /* Remove shadow for minimal look */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Navbar Brand Styling */
+.navbar-brand {
+    color: #8B5A2B;   /* Pascal Brown */
+    font-weight: bold;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+    margin-left: 40px;
+}
+
+/* Brand Hover Effect */
+.navbar-brand:hover {
+    color: #6B4226;   /* Slightly darker brown on hover */
+}
+
+/* Nav Links */
+.nav-link {
+    color: #8B5A2B;  /* Pascal Brown */
+    font-weight: 500;
+    margin: 0 12px;
+    padding: 8px 15px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Nav Link Hover Effect */
+.nav-link:hover {
+    background: rgba(139, 90, 43, 0.1);  /* Light brown hover effect */
+    color: #6B4226;                     /* Darker brown on hover */
+}
+
+/* Highlighted Button in Navbar */
+.nav-item-highlight .nav-link {
+    background: #8B5A2B;                /* Solid Pascal Brown */
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 8px 20px;
+    transition: background 0.3s ease;
+}
+
+/* Hover Effect for Highlighted Button */
+.nav-item-highlight .nav-link:hover {
+    background: #6B4226;                /* Darker brown on hover */
+    color: #FFFFFF;
+}
+
+
+/* Show Menu Button on Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        width: 70%; /* Ensure better spacing on mobile */
+        padding: 10px 15px;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem; /* Reduce size for mobile */
+        margin-left: 10px;
+    }
+
+
+
+    .menu-icon {
+        display: block; /* Show menu icon on mobile */
+        position: absolute;
+        right: 15px; /* Align to right side */
+        top: 10px;
+    }
+}

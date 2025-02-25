@@ -1,0 +1,53 @@
+/* === App.css === */
+
+/* App Container */
+#root {
+    background: #F1EBE7;  /* Beige Background */
+    min-height: 100vh;
+    color: #8B5A2B;       /* Pascal Brown for text */
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+/* Global Heading Styles */
+h1, h2, h3 {
+    color: #8B5A2B;  /* Pascal Brown Headings */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+    transition: transform 0.3s ease;
+}
+
+.content-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+/* Links Styling */
+a {
+    color: #8B5A2B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #6B4226;
+}
+
+@media (max-width: 768px) {
+    .dot-effect {
+        display: none;
+    }
+}
+

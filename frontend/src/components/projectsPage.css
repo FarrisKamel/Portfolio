@@ -1,0 +1,189 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Moves slightly up */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Section */
+.hero {
+    background: #F1EBE7;  /* Beige Background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    text-align: center;
+    min-height: 100vh; /* Ensures it takes full height of the viewport */
+    width: 100%;
+}
+
+/* Hero Text Styling */
+.hero-design {
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 10px;
+    background: linear-gradient(90deg, #8B5A2B, #6B4226);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+}
+
+/* Animated Letter Effect */
+.hero-design span {
+    display: inline-block;
+    opacity: 0; 
+    animation: fadeInUp 0.6s ease forwards; 
+    -webkit-text-fill-color: transparent; 
+    background: linear-gradient(90deg, #8B5A2B, #6B4226); 
+    -webkit-background-clip: text; 
+    color: #8B5A2B; /* Fallback color */
+}
+
+/* Projects Wrapper */
+.projects-wrapper {
+    background: #F1EBE7;  /* Beige Background */
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Project Item */
+.project-item {
+    display: flex;
+    align-items: flex-start; /* Aligns the title to the top */
+    justify-content: space-between;
+    background: #F9F5F2;
+    border-radius: 50px;
+    padding: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item:hover {
+    transform: scale(1.02);
+}
+
+/* Alternating Left & Right Layout */
+.project-item.left {
+    flex-direction: row;
+}
+
+.project-item.right {
+    flex-direction: row-reverse;
+}
+
+/* Image Container */
+.project-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px;
+    margin: 25px;
+}
+
+/* Adjust project info so title is aligned to the top */
+.project-info {
+    flex: 2;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns title to the top */
+}
+
+/* Adjust spacing to ensure title aligns properly */
+.project-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #8B5A2B;
+}
+
+.project-description {
+    font-size: 1.0rem;
+    color: #6B4226;
+    margin-top: 10px;
+}
+
+.project-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+@media (max-width: 768px) {
+
+    /* Hero Text Styling - Adjusting Size */
+    .hero-design {
+        font-size: 2.5rem; /* Reduce font size */
+        font-weight: bold;
+        letter-spacing: 8px; /* Slightly reduce letter spacing */
+        background: linear-gradient(90deg, #8B5A2B, #6B4226);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        transition: transform 0.3s ease;
+    }
+
+    .project-item {
+        flex-direction: column !important; /* Force stacking */
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .project-image-container {
+        order: -1; /* Moves image to the top */
+        max-width: 100%;
+        margin-bottom: 15px; /* Add spacing between image and text */
+    }
+
+    .project-image {
+        max-width: 120px; /* Make image larger */
+    }
+
+    .project-info {
+        max-width: 100%; /* Ensure text spans the width */
+        text-align: center;
+        padding: 0px 10px;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+        margin-top: 5px;
+    }
+
+    .project-description {
+        font-size: 0.7rem;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+
+}
+
+

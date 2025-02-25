@@ -1,0 +1,395 @@
+/* === HomePage.css === */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loading-screen {
+    background-color: #F1EBE7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+    color: #8B5A2B;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+    margin-top: 100px;
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    background-color: #F1EBE7;
+    color: #8B5A2B;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    text-align: center;
+    min-height: 100vh; /* Ensures it takes full height of the viewport */
+    width: 100%;
+}
+
+/* Hero Text Styling */
+.hero-design {
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 10px;
+    background: linear-gradient(90deg, #8B5A2B, #6B4226);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+}
+
+/* Animated Letter Effect */
+.hero-design span {
+    display: inline-block;
+    opacity: 0; 
+    animation: fadeInUp 0.6s ease forwards; 
+    -webkit-text-fill-color: transparent; 
+    background: linear-gradient(90deg, #8B5A2B, #6B4226); 
+    -webkit-background-clip: text; 
+    color: #8B5A2B; /* Fallback color */
+}
+
+/* Subtitle Text */
+.hero-about {
+    font-size: 1rem;
+    color: #6B4226;
+    max-width: 600px;
+    line-height: 1.6;
+    animation: fadeInUp 4.0s ease forwards; 
+    margin-top: 20px; /* Adds spacing between name and subtitle */
+    text-align: center;
+}
+
+/* Title Section */
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    opacity: 0; /* Initially hidden for fade-in effect */
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.title.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    color: #8B5A2B;
+    position: relative;
+    display: inline-block;
+}
+
+.title h1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #6B4226;
+    margin-top: 10px;
+}
+
+.blocks-container {
+    display: flex;
+    flex-wrap: wrap;  /* Ensures responsiveness */
+    justify-content: center;
+    align-items: stretch;
+    gap: 48px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px; /* Ensures it stays at a reasonable size */
+}
+
+.block-homepage {
+    border-radius: 100px;  /* Maintain rounded shape */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48%; /* Both take equal space */
+    padding: 60px;  /* Increased padding for more inner space */
+    min-height: 500px;  /* Increased height */
+    background: rgba(254, 249, 245, 0.5); /* adjust alpha (last value) for transparency */
+}
+
+.block-homepage-2 {
+    background: rgba(254, 249, 245, 0.5); /* adjust alpha (last value) for transparency */
+    border-radius: 100px;
+    display: flex; 
+    flex-direction: column; /* Ensures elements stack properly */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Makes it take the full width */
+    padding: 60px; /* Adds spacing around content */
+}
+
+/* Education Section */
+.education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;  /* Ensures responsiveness */
+    gap: 50px;  /* Adds spacing between items */
+    width: 100%;
+}
+
+/* Each education block */
+.edu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 220px;  /* Forces uniform width */
+    text-align: center;
+}
+
+/* Make sure both university names have the same behavior */
+.edu-title {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    min-height: 40px; /* Forces both titles to take up the same space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.edu-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Project Section */
+.projects-section {
+    text-align: center;
+    margin: 80px auto;
+    max-width: 1000px;
+    color: #8B5A2B;
+}
+
+.projects-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    color: #8B5A2B;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.project-card {
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 300px;
+    color: #8B5A2B;
+}
+
+.project-card:hover {
+    transform: scale(1.05) !important;
+}
+
+.project-image {
+    width: 150px !important; 
+    object-fit: contain; /* Ensures full image is visible */
+    border-radius: 12px;
+    margin-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.edu-title-2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    min-height: 40px; /* Forces both titles to take up the same space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.edu-degree-2 {
+    font-size: 15px;
+}
+
+.school-image {
+    width: 100px; 
+    height: 100px; /* Set a fixed height */
+    object-fit: contain; /* Ensures full image is visible */
+    border-radius: 12px;
+    margin-bottom: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-info {
+    padding: 15px;
+    color: #8B5A2B;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    color: #8B5A2B;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 10px 0;
+    color: #6B4226;
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+
+    .blocks-container {
+        flex-direction: column; /* Stack them when screen is smaller */
+        border-radius: 10px;
+    }
+    
+    .block-homepage {
+        width: 100%; /* Make full width when stacked */
+        border-radius: 30px;
+    }
+    
+    .block-homepage-2 {
+        width: 100%; /* Make full width when stacked */
+        border-radius: 30px;
+    }
+
+    .homepage {
+        padding: 30px 30px;  
+    }
+    
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  /* Centers vertically */
+        align-items: center;  /* Centers horizontally */
+        text-align: center;
+        height: 100vh;  /* Ensures full height */
+        width: 100%;
+    }
+
+    .hero-design {
+        font-size: 1.8rem !important;  /* Slightly larger for better visibility */
+        letter-spacing: 2px;
+    }
+
+    .hero-about {
+        font-size: 0.6rem;
+        padding: 0 20px;
+        max-width: 80%;
+    }
+
+    .title h1 {
+        font-size: 2rem;
+        color: #8B5A2B;
+        position: relative;
+        display: inline-block;
+    }
+
+    .education {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .edu-item {
+        padding: 5px;
+        border-radius: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 90%; 
+        max-width: 300px; 
+        margin: 10px 0; 
+    }
+
+    .edu-title {
+        font-size: 12px;
+        margin-bottom: 1px;
+    }
+
+    .edu-degree {
+        font-size: 11px;
+    }
+    
+    .projects-container {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px; 
+    }
+
+    .project-card {
+        width: 90%; 
+        max-width: 350px; 
+        text-align: center; 
+    }
+
+    .project-image {
+        width: 80%; 
+        max-width: 200px; 
+        height: auto; 
+        margin: 0 auto 15px; 
+    }
+
+    .edu-title-2 {
+        font-size: 1.0rem; 
+        font-weight: bold;
+        padding-bottom: 5px;
+    }
+
+    .edu-degree-2 {
+        font-size: 0.7rem; 
+        text-align: center; 
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+    }
+    
+}
+

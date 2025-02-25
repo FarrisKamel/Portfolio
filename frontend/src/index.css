@@ -1,0 +1,36 @@
+/* === index.css === */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Body Settings */
+body {
+    background: #F1EBE7;  /* Beige Background */
+    font-family: 'Poppins', sans-serif;
+    color: #8B5A2B;       /* Pascal Brown */
+    overflow-x: hidden;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #E5DED9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8B5A2B;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6B4226;
+}
+
