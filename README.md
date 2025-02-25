@@ -1,2 +1,2 @@
 # Portfolio
-This is the beginning off my creating my portfolio using the MERN stack.
+This is the first iteration of my portfolio. It was developed using the MERN stack.
