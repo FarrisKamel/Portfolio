@@ -18,7 +18,7 @@ export const NavBar = () => {
                         </Nav.Item>
                     </Nav>
                     <Nav.Link href="https://www.linkedin.com/in/farris-alqalam" target="_blank" rel="noopener noreferrer">
-                            <img src={"/assets/business.png"} alt="LinkedIn" className="linkedin-icon" style={{ width: '30px', height: '30px' }}/>
+                            <img src={"/assets/business.png"} alt="LinkedIn" className="linkedin-icon" style={{ width: '22px', height: '22px' }}/>
                         </Nav.Link>
                 </Navbar.Collapse>
             </Container>

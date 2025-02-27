@@ -85,7 +85,6 @@
 
 /* Subtitle Text */
 .hero-about {
-    font-size: 1rem;
     color: #6B4226;
     max-width: 600px;
     line-height: 1.6;
@@ -128,7 +127,7 @@
 
 .blocks-container {
     display: flex;
-    flex-wrap: wrap;  /* Ensures responsiveness */
+    flex-wrap: nowrap;  /* Ensures responsiveness */
     justify-content: center;
     align-items: stretch;
     gap: 48px;
@@ -138,7 +137,7 @@
 }
 
 .block-homepage {
-    border-radius: 100px;  /* Maintain rounded shape */
+    border-radius: 40px;
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -151,7 +150,7 @@
 
 .block-homepage-2 {
     background: rgba(254, 249, 245, 0.5); /* adjust alpha (last value) for transparency */
-    border-radius: 100px;
+    border-radius: 40px;
     display: flex; 
     flex-direction: column; /* Ensures elements stack properly */
     justify-content: center;
@@ -182,7 +181,7 @@
 
 /* Make sure both university names have the same behavior */
 .edu-title {
-    font-size: 17px;
+    font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 10px;
     min-height: 40px; /* Forces both titles to take up the same space */
@@ -362,11 +361,11 @@
     .projects-container {
         flex-direction: column; 
         align-items: center; 
-        gap: 20px; 
+        gap: 50px; 
     }
 
     .project-card {
-        width: 90%; 
+        width: 100%; 
         max-width: 350px; 
         text-align: center; 
     }

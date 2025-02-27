@@ -9,7 +9,7 @@ export const HomePage = () => {
     const expTitleRef = useRef(null);
     const [useFallback, setUseFallback] = useState(false);
 
-   // Fetch data, from hook
+    // Fetch data, from hook
     const { data: userData, loading, error }  = useFetchData('/api', useFallback);
     //console.log(userData);
 
@@ -47,7 +47,7 @@ export const HomePage = () => {
             eduRefs.current.forEach((ref) => {
                 if (ref) observer.observe(ref);
             });
-            
+
             // Experience section
             expRefs.current.forEach((ref) => {
                 if (ref) observer.observe(ref);
@@ -75,38 +75,38 @@ export const HomePage = () => {
             { school: 'George Washington University', degree: 'BS in Biomedical Engineering',
                 image: "/assets/gw.png", link: "https://www.gwu.edu" }
         ] : userData.data.length > 0 
-        ? [
-            { school: userData.data[0].graduateSchool, degree: userData.data[0].graduateDegree, 
+            ? [
+                { school: userData.data[0].graduateSchool, degree: userData.data[0].graduateDegree, 
                     image: "/assets/columbia.webp", link: userData.data[0].graduateLink},
-            { school: userData.data[0].undergraduateSchool, degree: userData.data[0].undergraduateDegree,
+                { school: userData.data[0].undergraduateSchool, degree: userData.data[0].undergraduateDegree,
                     image: "/assets/gw.png", link: userData.data[0].undergraduateLink}
-        ] : [];
-    
+            ] : [];
+
     // Get experience data from db, otherwise static
     const experience = (useFallback || error) 
         ? [
-        {
-            title: "IDenTV",
-            role: "Software Engineer",
-            time: "2023 - Present", 
-            image: "/assets/identv.png",
-            link: "http://newsite.identv.com/index.html"
-        },
-        {
-            title: "PRAISE Lab - Columbia Engineering",
-            role: "Student Researcher",
-            time: "2024 - Present", 
-            image: "/assets/identv.png",
-            link: "https://www.cs.columbia.edu/~ansaf/praise/index.html" 
-            
-        }
+            {
+                title: "IDenTV",
+                role: "Software Engineer",
+                time: "2023 - Present", 
+                image: "/assets/identv.png",
+                link: "http://newsite.identv.com/index.html"
+            },
+            {
+                title: "PRAISE Lab - Columbia Engineering",
+                role: "Student Researcher",
+                time: "2024 - Present", 
+                image: "/assets/identv.png",
+                link: "https://www.cs.columbia.edu/~ansaf/praise/index.html" 
+
+            }
         ] : userData.data.length > 0 
-        ? [
-            { name: userData.data[4].name, role: userData.data[4].role, time: userData.data[4].time, 
+            ? [
+                { name: userData.data[4].name, role: userData.data[4].role, time: userData.data[4].time, 
                     image: userData.data[4].image, link: userData.data[4].link },
-            { name: userData.data[5].name, role: userData.data[5].role, time: userData.data[5].time, 
+                { name: userData.data[5].name, role: userData.data[5].role, time: userData.data[5].time, 
                     image: userData.data[5].image, link: userData.data[5].link}
-        ] : [];
+            ] : [];
 
     // Return component
     return (
@@ -137,7 +137,7 @@ export const HomePage = () => {
                         )
                     ))}
                 </h1>
-                <p className="hero-about">Hi, I'm Farris Alqalam - a problem-solver, builder, and lifelong learner.</p>
+                <div className="hero-about">Hi, I'm Farris Alqalam - a problem-solver, builder, and lifelong learner.</div>
             </section>
 
             {/* Parent Container */}

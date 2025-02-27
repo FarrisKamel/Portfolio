@@ -204,7 +204,7 @@
     }
 
     .experience-date {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 
     .experience-title {
@@ -212,11 +212,11 @@
     }
 
     .experience-company {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .experience-bullets li {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .skills-category {
@@ -230,7 +230,7 @@
 
     .skills-content {
         color: #8B5A2B;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         min-width: 100%;
     }
 

@@ -72,7 +72,7 @@
     align-items: flex-start; /* Aligns the title to the top */
     justify-content: space-between;
     background: #F9F5F2;
-    border-radius: 50px;
+    border-radius: 30px;
     padding: 40px;
     transition: transform 0.3s ease-in-out;
 }
@@ -173,12 +173,12 @@
     }
 
     .project-title {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         margin-top: 5px;
     }
 
     .project-description {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         line-height: 1.4;
         margin-bottom: 20px;
     }

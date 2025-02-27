@@ -2,20 +2,20 @@
 
 /* Navbar Styling */
 .navbar {
-    background: #F1EBE7;  /* Beige Background */
+    background: #F1EBE7;  
     border-radius: 15px;
-    width: 50%;  /* Set a fixed width percentage */
-    max-width: 1300px;  /* Prevent excessive stretching */
-    margin: 20px auto; /* Center it horizontally */
+    width: 50%;  
+    max-width: 1300px;  
+    margin: 20px auto; 
     padding: 10px 20px;
-    box-shadow: none;  /* Remove shadow for minimal look */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: none;  
+    transition: background-color 0.3s ease, 
 }
 
 
 /* Navbar Brand Styling */
 .navbar-brand {
-    color: #8B5A2B;   /* Pascal Brown */
+    color: #8B5A2B;   
     font-weight: bold;
     font-size: 1.8rem;
     letter-spacing: 3px;
@@ -25,7 +25,7 @@
 
 /* Brand Hover Effect */
 .navbar-brand:hover {
-    color: #6B4226;   /* Slightly darker brown on hover */
+    color: #6B4226;   
 }
 
 /* Nav Links */

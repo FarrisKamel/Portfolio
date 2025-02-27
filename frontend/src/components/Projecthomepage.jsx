@@ -108,9 +108,9 @@ export const Projecthomepage = () => {
                             {projects.map((project, index) => (
                                 <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
                                     <div key={index} className="project-card fade-in-section" ref={(el) => (projRefs.current[index] = el)}>
-                                        <img src={project.image} alt={project.title} className="project-image" />
-                                        <div className="edu-title-2">{project.title}</div>
-                                        <div className="edu-degree-2">{project.description}</div>
+                                        <img src={project.image} alt={project.title} className="school-image" />
+                                        <div className="edu-title">{project.title}</div>
+                                        <div className="edu-degree">{project.description}</div>
                                     </div>
                                 </a>
                             ))}

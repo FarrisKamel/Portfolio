@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 
 export const DotLetterEffect = () => {
     const canvasRef = useRef(null);
-    const dots = [];
     const letter = "Farris";
     const fontSize = 100;
     const dotSpacing = 5;
@@ -10,37 +9,44 @@ export const DotLetterEffect = () => {
 
     useEffect(() => {
         const canvas = canvasRef.current;
-        const ctx = canvas.getContext("2d", {willReadFrequently: true});
-        canvas.width = window.innerWidth / 1.7;
-        canvas.height = 300;
+        const ctx = canvas.getContext("2d", { willReadFrequently: true });
+        let dots = []; // Move dots inside useEffect to reset on resize
 
-        ctx.fillStyle = "#C19A6B"; // Lighter, warm brown
-        ctx.font = `bold ${fontSize}px cursive`;
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText(letter, canvas.width / 2, canvas.height / 2);
+        const updateCanvasSize = () => {
+            canvas.width = window.innerWidth / 1.5;
+            canvas.height = 300;
 
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#C19A6B"; // Light brown color
+            ctx.font = `bold ${fontSize}px cursive`;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(letter, canvas.width / 2, canvas.height / 2);
 
-        for (let y = 0; y < canvas.height; y += dotSpacing) {
-            for (let x = 0; x < canvas.width; x += dotSpacing) {
-                const index = (y * canvas.width + x) * 4;
-                if (imageData.data[index] < 128) {
-                    dots.push({
-                        x,
-                        y,
-                        originalX: x,
-                        originalY: y,
-                        vx: 0,
-                        vy: 0,
-                    });
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Reset dots array to avoid accumulation
+            dots = [];
+            for (let y = 0; y < canvas.height; y += dotSpacing) {
+                for (let x = 0; x < canvas.width; x += dotSpacing) {
+                    const index = (y * canvas.width + x) * 4;
+                    if (imageData.data[index] < 128) {
+                        dots.push({
+                            x,
+                            y,
+                            originalX: x,
+                            originalY: y,
+                            vx: 0,
+                            vy: 0,
+                        });
+                    }
                 }
             }
-        }
+        };
 
-        //console.log("Total dots:", dots.length);
+        updateCanvasSize(); // Set initial size
 
+        // Animation loop
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             dots.forEach((dot) => {
@@ -58,9 +64,9 @@ export const DotLetterEffect = () => {
         animate();
 
         function handleMouseMove(event) {
-            const rect = canvas.getBoundingClientRect(); // Get canvas position
-            const mouseX = event.clientX - rect.left; // Adjust X coordinate
-            const mouseY = event.clientY - rect.top;  // Adjust Y coordinate
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+            const mouseY = event.clientY - rect.top;
 
             dots.forEach((dot) => {
                 const dx = dot.x - mouseX;
@@ -77,20 +83,27 @@ export const DotLetterEffect = () => {
             });
         }
 
+        window.addEventListener("resize", updateCanvasSize);
         canvas.addEventListener("mousemove", handleMouseMove);
-        return () => canvas.removeEventListener("mousemove", handleMouseMove);
+
+        // Cleanup on unmount
+        return () => {
+            window.removeEventListener("resize", updateCanvasSize);
+            canvas.removeEventListener("mousemove", handleMouseMove);
+        };
     }, []);
 
     return (
         <div style={{ 
             display: "flex", 
+            flexWrap: "nowrap",
             justifyContent: "center", 
             alignItems: "center", 
             height: "50vh", 
-            borderRadius: "100px",
+            borderRadius: "30px",
             background: "#F1EBE7"  
-            }}>
-            <canvas ref={canvasRef} style={{ display: "block", borderRadius: "50px" }} />
+        }}>
+            <canvas ref={canvasRef} style={{ display: "block", borderRadius: "30px" }} />
         </div>
     );
 };
