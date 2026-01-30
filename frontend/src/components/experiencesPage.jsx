@@ -60,10 +60,18 @@ export const ExperiencePage = () => {
     const experiences = (useFallback || error)
         ? [
             {
+                title: "Investment Banking Analyst",
+                company: "Clear Street",
+                start: "Jun 2025",
+                end: "Present",
+                location: "New York, NY",
+                bulletpoint1: "M&A.",
+            },
+            {
                 title: "Software Engineer",
                 company: "IDenTV",
                 start: "Sep 2023",
-                end: "Present",
+                end: "Mar 2025",
                 location: "McLean, VA (Remote)",
                 bulletpoint1: "Developed AI-driven video analytics tools for real-time processing.",
                 bulletpoint2: "Implemented machine learning pipelines for large-scale datasets.",
@@ -167,6 +175,12 @@ export const ExperiencePage = () => {
 
             {/* Skills Container */}
             <div className="skills-container timeline-content fade-in" ref={skillRefs}>
+                <div className="skills-category">
+                    <div className="skills-title">Finance:</div>
+                    <div className="skills-content">
+                        Financial Modeling, Valuation, Bloomberg, FacSet, PitchBook, Excel, Powerpoint
+                    </div>
+                </div>
                 <div className="skills-category">
                     <div className="skills-title">Programming Languages:</div>
                     <div className="skills-content">
