@@ -86,19 +86,18 @@ export const HomePage = () => {
     const experience = (useFallback || error) 
         ? [
             {
-                title: "IDenTV",
-                role: "Software Engineer",
-                time: "2023 - Present", 
-                image: "/assets/identv.png",
-                link: "http://newsite.identv.com/index.html"
+                title: "Clear Street",
+                role: "Investment Banking Analyst",
+                time: "2025 - Present", 
+                image: "/assets/clearstreet.png",
+                link: "https://www.clearstreet.io/services/investment-banking"
             },
             {
-                title: "PRAISE Lab - Columbia Engineering",
-                role: "Student Researcher",
-                time: "2024 - Present", 
+                title: "IDenTV",
+                role: "Software Engineer",
+                time: "2023 - 2025", 
                 image: "/assets/identv.png",
-                link: "https://www.cs.columbia.edu/~ansaf/praise/index.html" 
-
+                link: "http://newsite.identv.com/index.html"
             }
         ] : userData.data.length > 0 
             ? [
