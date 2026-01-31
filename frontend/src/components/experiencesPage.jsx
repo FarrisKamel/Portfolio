@@ -178,7 +178,7 @@ export const ExperiencePage = () => {
                 <div className="skills-category">
                     <div className="skills-title">Finance:</div>
                     <div className="skills-content">
-                        Financial Modeling, Valuation, Bloomberg, FacSet, PitchBook, Excel, Powerpoint
+                        Financial Modeling, Valuation, Bloomberg, FactSet, PitchBook, Excel, Powerpoint
                     </div>
                 </div>
                 <div className="skills-category">
